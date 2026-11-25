@@ -1,5 +1,8 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import logo from "../../logo/logo sena.png";
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
 import "./cuentadante.css";
 
 const ACTAS_INICIALES = [
@@ -17,12 +20,16 @@ const ACTAS_INICIALES = [
     receptor: "Ing. Carlos Mendoza R. (Instructor)",
     tipoBien: "Material Pedagógico",
     ambiente: "Ambiente 204 - Piso 2",
+<<<<<<< HEAD
     ambienteId: "AMB-204",
     piso: 2,
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
     archivoNombre: null,
   },
 ];
 
+<<<<<<< HEAD
 const PERFIL_USUARIO = {
   iniciales: "CM",
   nombre: "Ing. Carlos Mendoza R.",
@@ -33,6 +40,8 @@ const PERFIL_USUARIO = {
   ambientesAsignados: "36 Ambientes (4 Pisos)",
 };
 
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
 const PISOS = [1, 2, 3, 4];
 
 const AMBIENTES_36 = Array.from({ length: 36 }, (_, index) => {
@@ -49,7 +58,10 @@ const AMBIENTES_36 = Array.from({ length: 36 }, (_, index) => {
   return {
     id: `AMB-${piso}0${numeroEnPiso}`,
     nombre: codigoAmbiente,
+<<<<<<< HEAD
     etiquetaCompleta: `${codigoAmbiente} - Piso ${piso}`,
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
     piso,
     modulo,
     bienes:
@@ -79,12 +91,15 @@ export default function RecepcionActas() {
   const [actas, setActas] = useState(ACTAS_INICIALES);
   const [actaSeleccionadaId, setActaSeleccionadaId] = useState("ACT-2026-042");
 
+<<<<<<< HEAD
   // Notificaciones estilo celular + menú de perfil + acta abierta desde alerta
   const [mostrarNotifCelular, setMostrarNotifCelular] = useState(false);
   const [perfilAbierto, setPerfilAbierto] = useState(false);
   const [notificacionesDescartadas, setNotificacionesDescartadas] = useState([]);
   const [actaAbiertaDetalle, setActaAbiertaDetalle] = useState(null);
 
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
   // Estado para subir documento de acta de ambiente de formación
   const [mostrarSubida, setMostrarSubida] = useState(false);
   const [ambienteForm, setAmbienteForm] = useState("Ambiente 101 - Piso 1");
@@ -98,6 +113,7 @@ export default function RecepcionActas() {
       ? AMBIENTES_36
       : AMBIENTES_36.filter((amb) => amb.piso === Number(pisoSeleccionado));
 
+<<<<<<< HEAD
   const notificacionesVisibles = actas
     .filter((acta) => !notificacionesDescartadas.includes(acta.id))
     .map((acta) => ({
@@ -131,14 +147,19 @@ export default function RecepcionActas() {
     setMostrarNotifCelular(false);
   };
 
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
   const handleSubirActaAmbiente = (e) => {
     e.preventDefault();
     if (!archivoActa) return;
 
+<<<<<<< HEAD
     const ambienteEncontrado = AMBIENTES_36.find(
       (amb) => amb.etiquetaCompleta === ambienteForm
     );
 
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
     const nuevoId =
       codigoActaForm.trim() ||
       `ACT-AMB-${String(Math.floor(100 + Math.random() * 900))}`;
@@ -157,25 +178,36 @@ export default function RecepcionActas() {
       receptor: "Ing. Carlos Mendoza R. (Instructor / Cuentadante)",
       tipoBien: "Documento de Ambiente",
       ambiente: ambienteForm,
+<<<<<<< HEAD
       ambienteId: ambienteEncontrado ? ambienteEncontrado.id : "AMB-101",
       piso: ambienteEncontrado ? ambienteEncontrado.piso : 1,
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
       archivoNombre: archivoActa.name,
     };
 
     setActas((prev) => [nuevaActa, ...prev]);
+<<<<<<< HEAD
     setActaSeleccionadaId(nuevaActa.ambienteId);
     setActaAbiertaDetalle(nuevaActa);
+=======
+    setActaSeleccionadaId(nuevoId);
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
     setCodigoActaForm("");
     setObservacionForm("");
     setArchivoActa(null);
     setFileInputKey((prev) => prev + 1);
     setMostrarSubida(false);
     setSeccionSidebar("bienes");
+<<<<<<< HEAD
     setMostrarNotifCelular(true);
+=======
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
   };
 
   return (
     <div className="ns-layout">
+<<<<<<< HEAD
       {/* Banners flotantes estilo notificación de celular */}
       {mostrarNotifCelular && (
         <div
@@ -412,6 +444,23 @@ export default function RecepcionActas() {
           </span>
           <span className="ns-role-place">36 Amb. • 4 Pisos</span>
         </button>
+=======
+      <aside className="ns-sidebar">
+        <div className="ns-brand">
+          <div className="ns-brand-logo" aria-hidden="true">
+            NS
+          </div>
+          <div>
+            <div className="ns-brand-name">NovedaSoft</div>
+            <div className="ns-brand-sub">SENA CIDE Soacha</div>
+          </div>
+        </div>
+
+        <div className="ns-role-bar">
+          <span className="ns-role-badge">● Panel Cuentadante</span>
+          <span className="ns-role-place">Edificio CIDE</span>
+        </div>
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
 
         <div className="ns-menu-title">MENÚ PRINCIPAL</div>
         <nav className="ns-nav" aria-label="Menú principal">
@@ -445,12 +494,21 @@ export default function RecepcionActas() {
         <div className="ns-user-card">
           <div className="ns-user-top">
             <div className="ns-avatar" aria-hidden="true">
+<<<<<<< HEAD
               {PERFIL_USUARIO.iniciales}
             </div>
             <div className="ns-user-info">
               <div className="ns-user-name">{PERFIL_USUARIO.nombre}</div>
               <div className="ns-user-role">{PERFIL_USUARIO.rol}</div>
               <div className="ns-user-email">{PERFIL_USUARIO.correo}</div>
+=======
+              CM
+            </div>
+            <div className="ns-user-info">
+              <div className="ns-user-name">Ing. Carlos Mendoza R.</div>
+              <div className="ns-user-role">Instructor / Cuentadante</div>
+              <div className="ns-user-email">carlos.mendoza@sena.edu.co</div>
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
             </div>
           </div>
           <button type="button" className="ns-logout-btn">
@@ -471,6 +529,7 @@ export default function RecepcionActas() {
             </strong>
           </div>
 
+<<<<<<< HEAD
           <div className="ns-topbar-right" style={{ position: "relative" }}>
             <span className="ns-server-pill">● Servidor Activo</span>
             <span className="ns-center-pill">{PERFIL_USUARIO.centro}</span>
@@ -627,6 +686,26 @@ export default function RecepcionActas() {
                 </div>
               </div>
             )}
+=======
+          <div className="ns-topbar-right">
+            <span className="ns-server-pill">● Servidor Activo</span>
+            <span className="ns-center-pill">
+              SENA CIDE Soacha - Regional Cundinamarca
+            </span>
+            <button type="button" className="ns-manual-btn">
+              Descargar Manual de Actas (PDF)
+            </button>
+            <button
+              type="button"
+              className="ns-notif-btn"
+              aria-label="Notificaciones"
+            >
+              🔔
+            </button>
+            <div className="ns-mini-avatar" aria-hidden="true">
+              CM
+            </div>
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
           </div>
         </header>
 
@@ -649,6 +728,7 @@ export default function RecepcionActas() {
             </div>
 
             {seccionSidebar === "bienes" && !mostrarSubida && (
+<<<<<<< HEAD
               <>
                 {/* Tarjeta enfocada al entrar desde una notificación */}
                 {actaAbiertaDetalle && (
@@ -809,6 +889,80 @@ export default function RecepcionActas() {
                   </div>
                 </div>
               </>
+=======
+              <div className="ns-list-card">
+                <div className="ns-list-header">
+                  <div className="ns-list-title-group">
+                    <h2 className="ns-list-title">Bienes por Piso y Módulo</h2>
+                    <span className="ns-count-pill">36 Ambientes • 4 Pisos</span>
+                  </div>
+                  <span className="ns-sync-text">
+                    Mostrando {ambientesFiltrados.length} ambientes •{" "}
+                    {actas.length} actas registradas
+                  </span>
+                </div>
+
+                <div className="ns-pisos-bar">
+                  <button
+                    type="button"
+                    className={`ns-piso-btn ${
+                      pisoSeleccionado === "todos" ? "is-active" : ""
+                    }`}
+                    onClick={() => setPisoSeleccionado("todos")}
+                  >
+                    Todos los Pisos (36)
+                  </button>
+                  {PISOS.map((piso) => (
+                    <button
+                      key={piso}
+                      type="button"
+                      className={`ns-piso-btn ${
+                        pisoSeleccionado === piso ? "is-active" : ""
+                      }`}
+                      onClick={() => setPisoSeleccionado(piso)}
+                    >
+                      Piso {piso} (9)
+                    </button>
+                  ))}
+                </div>
+
+                <div className="ns-modulos-grid">
+                  {ambientesFiltrados.map((amb) => (
+                    <article
+                      key={amb.id}
+                      className={`ns-modulo-card ${
+                        amb.id === actaSeleccionadaId ? "is-selected" : ""
+                      }`}
+                      onClick={() => setActaSeleccionadaId(amb.id)}
+                    >
+                      <div className="ns-modulo-top">
+                        <div>
+                          <h3 className="ns-modulo-title">{amb.nombre}</h3>
+                          <span className="ns-modulo-sub">
+                            Piso {amb.piso} • {amb.modulo}
+                          </span>
+                        </div>
+                        <span className="ns-status-chip is-ok">
+                          {amb.bienes.length}{" "}
+                          {amb.bienes.length === 1 ? "Bien" : "Bienes"}
+                        </span>
+                      </div>
+
+                      <div className="ns-modulo-bienes">
+                        {amb.bienes.map((bien) => (
+                          <div key={bien.placa} className="ns-bien-item">
+                            <strong>{bien.nombre}</strong>
+                            <span>
+                              Placa: {bien.placa} • Serial: {bien.serial}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
             )}
 
             {mostrarSubida && (
@@ -830,6 +984,7 @@ export default function RecepcionActas() {
                 <div className="ns-upload-grid">
                   <div className="ns-field">
                     <label htmlFor="amb-select">Ambiente de formación</label>
+<<<<<<< HEAD
                     <select
                       id="amb-select"
                       value={ambienteForm}
@@ -851,6 +1006,16 @@ export default function RecepcionActas() {
                         </optgroup>
                       ))}
                     </select>
+=======
+                    <input
+                      id="amb-select"
+                      type="text"
+                      value={ambienteForm}
+                      onChange={(e) => setAmbienteForm(e.target.value)}
+                      placeholder="Ej. Ambiente 101 - Piso 1"
+                      required
+                    />
+>>>>>>> dfff90288e81cdbce6878bacefc5411d0ec2751f
                   </div>
 
                   <div className="ns-field">
